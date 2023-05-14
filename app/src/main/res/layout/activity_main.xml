@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animationCache="true"
+    android:background="@drawable/gradient"
+    android:elevation="15dp"
+    android:textAlignment="center"
+    app:barrierMargin="5dp"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-1dp">
+
+    <TextView
+        android:id="@+id/wordOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:hint="Guess the Word"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#EEEBEB"
+        android:textColorHint="#765D5D"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="178dp"
+        android:layout_height="42dp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#EEEBEB"
+        android:textColorHint="#765D5D"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <ImageView
+        android:id="@+id/btnClue"
+        android:layout_width="47dp"
+        android:layout_height="42dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.983"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/icons8_info" />
+
+    <ImageView
+        android:id="@+id/life_1"
+        android:layout_width="47dp"
+        android:layout_height="42dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/red_heart_icon" />
+
+    <ImageView
+        android:id="@+id/life_2"
+        android:layout_width="47dp"
+        android:layout_height="42dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/red_heart_icon" />
+
+    <ImageView
+        android:id="@+id/life_3"
+        android:layout_width="47dp"
+        android:layout_height="42dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.315"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/red_heart_icon" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1F9F0B"
+        android:elevation="15dp"
+        android:text="Reset"
+        android:textColor="#0E0000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.959" />
+
+    <Button
+        android:id="@+id/btnCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1F9F0B"
+        android:elevation="15dp"
+        android:text="Check"
+        android:textColor="#0E0000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.959" />
+
+    <TableLayout
+        android:layout_width="362dp"
+        android:layout_height="381dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.734">
+
+        <TableRow
+            android:id="@+id/TableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/input_1"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_2"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.976" />
+
+            <TextView
+                android:id="@+id/input_3"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.976" />
+
+            <TextView
+                android:id="@+id/input_4"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.976" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/input_5"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_6"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_7"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_8"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/input_9"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_10"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_11"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_12"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/input_13"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_14"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_15"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/input_16"
+                android:layout_width="75dp"
+                android:layout_height="67dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_gradient"
+                android:clickable="true"
+                android:elevation="15dp"
+                android:hint="#"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#0A0700"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
