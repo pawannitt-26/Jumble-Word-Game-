@@ -7,12 +7,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.random.databinding.ActivityFirstTemplateBinding
 
 
-public class FirstTemplate : AppCompatActivity() {
+class FirstTemplate : AppCompatActivity() {
     lateinit var binding: ActivityFirstTemplateBinding
     // define the variable
     private lateinit var send_word: EditText
@@ -31,7 +30,7 @@ public class FirstTemplate : AppCompatActivity() {
         send_button=findViewById(R.id.btnStart)
 
         sf =getSharedPreferences("my_sf", MODE_PRIVATE)
-        var hs = sf.getInt("sf_hs",0)
+        val hs = sf.getInt("sf_hs",0)
 
         binding.highScore.setOnClickListener {
 
@@ -41,11 +40,6 @@ public class FirstTemplate : AppCompatActivity() {
             val best = (dialog2).findViewById<TextView>(R.id.bestScore)
             best.text="Best Score:"+hs.toString()
         }
-
-
-
-
-
 
         send_button.setOnClickListener {
             val str1 = send_word.text.toString()
